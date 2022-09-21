@@ -19,6 +19,29 @@ body {
 }
 .page {
   padding: 10vw 0;
+  position: relative;
+}
+.page::before {
+  content: "";
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+}
+.page::after {
+  content: "";
+  z-index: 1;
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: rgb(0,0,0);
+  background: linear-gradient(00deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
 }
 ::selection {
   color: #000000;
@@ -49,16 +72,20 @@ p {
 .one-quote-box {
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.1);
-  padding-left: 40px;
-  margin-bottom: 2vh;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-.one-quote-box__content {
-  padding: 2vh 40px 2vh 0;
-  border-left: 1px dotted rgba(255, 255, 255, 0.1);
+  padding: 8vh;
+  margin-bottom: 10vh;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07),
+              0 2px 4px rgba(0,0,0,0.07),
+              0 4px 8px rgba(0,0,0,0.07),
+              0 8px 16px rgba(0,0,0,0.07),
+              0 16px 32px rgba(0,0,0,0.07),
+              0 32px 64px rgba(0,0,0,0.07);
 }
 .quote-text {
-  font-size: 1.4em;
+  font-size: 1.2em;
+}
+.quote-notes {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 .text-color-primary {
   color: #ffffff;
@@ -75,7 +102,7 @@ p {
   display: inline-block;
 }
 .quote-author {
-  margin: 2vw 0;
+  margin: 4vh 0 8vh 0;
 }
 a {
   color: #388BFD;
@@ -91,8 +118,16 @@ a:hover {
 }
 h1.main-title {
   font-size: 1.1em;
+  font-weight: 400;
   color: #ffffff;
   text-align: center;
+  margin-top: 14vh;
+  margin-bottom: 24vh;
+  transition: margin-bottom linear .3s;
+  transition-delay: 1.4s;
+}
+.loading-done h1.main-title {
+  margin-bottom: 20vh;
 }
 h2 {
   font-size: 1.1em;
@@ -107,6 +142,20 @@ header, section {
 footer {
   padding-bottom: 6vw;
 }
+.fade-in-on-load {
+  opacity: 0;
+  transition: opacity linear .6s;
+  transition-delay: 1s;
+}
+.loading-done .fade-in-on-load {
+  opacity: 1;
+}
+.branding__avatar.dark {
+  display: block;
+}
+.branding__avatar.light {
+  display: none;
+}
 
 
 /* --------------------------------------------------------------
@@ -114,6 +163,7 @@ footer {
 -------------------------------------------------------------- */
 .meta-box {
   position: fixed;
+  z-index: 2;
   top: 16px;
   right: 16px;
   padding: 8px;
@@ -137,13 +187,13 @@ footer {
 }
 .branding {
   position: fixed;
+  z-index: 2;
   top: 16px;
   left: 16px;
   display: flex;
 }
 .branding__statement {
   font-size: 12px;
-  display: inline-block;
   margin-left: 8px;
   line-height: 32px;
 }
@@ -167,11 +217,38 @@ body.light-mode {
   border-bottom: 2px solid #247BE2;
 }
 .light-mode .one-quote-box {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.92);
 }
-.light-mode .one-quote-box__content {
-  border-left: 1px dotted rgba(0, 0, 0, 0.1);
+.light-mode .quote-notes {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.light-mode .page::before {
+  content: "";
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(240,240,240,1) 0%, rgba(240,240,240,0) 100%);
+}
+.light-mode .page::after {
+  content: "";
+  z-index: 1;
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: rgb(0,0,0);
+  background: linear-gradient(00deg, rgba(240,240,240,1) 0%, rgba(240,240,240,0) 100%);
+}
+.light-mode .branding__avatar.dark {
+  display: none;
+}
+.light-mode .branding__avatar.light {
+  display: block;
 }
 
 /* --------------------------------------------------------------

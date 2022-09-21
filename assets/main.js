@@ -1,29 +1,27 @@
+$(window).on('load', function (e) {
+  $("body").toggleClass( "loading-done" );
+})
+
 $(document).ready(function() {
 
   $.getJSON( "datas.json" , function(data) {
 
     $.each( data.notes, function( i, note ) {
       $('.feed').append(
-        '<div class="one-quote-box quote-' +  data.notes[i].id + '"><div class="one-quote-box__content">' +
-            '<p class="quote-text text-color-primary">' + data.notes[i].quote + '</p>' +
-            '<p class="quote-author text-color-primary">&mdash;' + data.notes[i].author + '</p>' +
-            '<div class="quote-date text-small">' + data.notes[i].date + '</div> &bull; ' +
-            '<div class="view-notes text-small">notes</div>' +
-            '<div class="notes" style="display:none">' + data.notes[i].notes + '</div>' +
-        '</div></div>'
+        '<div class="one-quote-box quote-' +  data.notes[i].id + '">' +
+            '<p class="quote-text text-color-primary"> &ldquo;' + data.notes[i].quote + '&rdquo;</p>' +
+            '<p class="quote-author text-small">&mdash;' + data.notes[i].author + '</p>' +
+            '<div class="quote-date text-small">' + data.notes[i].date + '</div>' +
+            '<div class="quote-notes">' + data.notes[i].notes + '</div>' +
+        '</div>'
       );
 
     });
   });
+
 });
 
-
-$('.view-notes').on('click', function() {
-    $(this).next().toggle();
-    $(this).toggleClass( "active" );
-});
-
-$( ".meta-box__button" ).click(function() {
+$('.meta-box__button').on('click', function() {
 
   $(this).toggleClass( "active" );
   $("body").toggleClass( "light-mode" );
