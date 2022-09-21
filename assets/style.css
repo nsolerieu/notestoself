@@ -5,107 +5,197 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  text-rendering: optimizeLegibility;
+  outline: 0 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 body {
   line-height: 1.6;
-  padding: 10vw 0;
+  padding: 0;
   margin: 0;
-  font-family: "Helvetica Neue",HelveticaNeue,Helvetica,Arial,sans-serif;
-  background: #f0f0f0;
-  color: #333333;
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  background: #000000;
+  color: #9A9A9A;
+}
+.page {
+  padding: 10vw 0;
 }
 ::selection {
-  color: #00EB00;
+  color: #000000;
+  background: rgba(255,255,255,0.9);
 }
-.wrapper {
-  width: 620px;
-  margin: 0 auto;
+.container {
+  width: 100%;
+  max-width: 620px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 20px;
 }
+
 
 /* --------------------------------------------------------------
 /* =ELEMENTS & TYPO / Kind of Branding basic definition area
 -------------------------------------------------------------- */
-a {
-  color: #222222;
-  text-decoration: none;
-  border-bottom: 2px solid #d2d2d2;
-}
-a:hover {
-  color: #00EB00;
-  border-bottom: 2px solid #00EB00;
-}
-.header {
-  padding: 5vw 0;
-  text-align: center;
-}
-.copy {
-  padding: 5vw 0;
-  text-align: center;
-}
-h1 {
-
-  margin: 0 0 25px 0;
-}
 p {
   font-weight: 400;
-  font-style: normal;
-  font-size: 20px;
-  line-height: 1.7;
-  font-family: "Libre Baskerville",Georgia,"Times New Roman",Times,serif;
+  font-size: 1em;
+  line-height: 160%;
+  margin: 20px 0;
+}
+.text-small {
+  font-size: 0.7em;
+  opacity: 0.7;
 }
 .one-quote-box {
-  padding: 5vw;
-  background: #fff;
-  margin: 2.5vw 0;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  padding-left: 40px;
+  margin-bottom: 2vh;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.one-quote-box__content {
+  padding: 2vh 40px 2vh 0;
+  border-left: 1px dotted rgba(255, 255, 255, 0.1);
 }
 .quote-text {
-  line-height: 1.4;
-  margin: 20px 0 30px 0;
+  font-size: 1.4em;
+}
+.text-color-primary {
+  color: #ffffff;
+}
+.view-notes {
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+}
+.view-notes.active, .view-notes:hover {
+  opacity: .9;
+}
+.quote-date {
+  display: inline-block;
 }
 .quote-author {
-  font-size: 13px;
+  margin: 2vw 0;
+}
+a {
+  color: #388BFD;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  border-bottom: 1px solid #388BFD;
+}
+a:hover {
+  color: #539BFF;
+  border-bottom: 1px solid #539BFF;
+}
+h1.main-title {
+  font-size: 1.1em;
+  color: #ffffff;
+  text-align: center;
+}
+h2 {
+  font-size: 1.1em;
+  margin: 0;
+  font-weight: 700;
+  color: rgba(0,0,0,0.3);
+  color: #ffffff;
+}
+header, section {
+  padding-bottom: 5vw;
+}
+footer {
+  padding-bottom: 6vw;
+}
+
+
+/* --------------------------------------------------------------
+/* =Header stuff
+-------------------------------------------------------------- */
+.meta-box {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  padding: 8px;
+  border-radius: 8px;
+  background: rgba(190, 190, 190, 0.25);
+  display: flex;
+}
+.meta-box__button {
+  font-size: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  opacity: 0.3;
+  padding: 0 4px;
+  font-weight: bold;
+}
+.meta-box__button:hover {
+  opacity: 0.8;
+}
+.meta-box__button.active {
+  opacity: 1;
+}
+.branding {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  display: flex;
+}
+.branding__statement {
+  font-size: 12px;
+  display: inline-block;
+  margin-left: 8px;
+  line-height: 32px;
 }
 
 /* --------------------------------------------------------------
-/* =SMALL SCREENs AND TABLET
+/* =LIGHT MODE
 -------------------------------------------------------------- */
-@media screen and (max-width: 1024px) {
-  h1 {
-    font-size: 3.5em;
-    line-height: 1.3;
-  }
-  p {
-    font-size: 1.5em;
-    line-height: 1.6;
-    position: relative;
-  }
-  .wrapper {
-    width: 580px;
-  }
+body.light-mode {
+  background: #f0f0f0;
+  color: #5b626a;
+}
+.light-mode .text-color-primary {
+  color: #262a2f;
+}
+.light-mode a {
+  color: #0969da;
+  border-bottom: 2px solid #0969da;
+}
+.light-mode a:hover {
+  color: #247BE2;
+  border-bottom: 2px solid #247BE2;
+}
+.light-mode .one-quote-box {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.light-mode .one-quote-box__content {
+  border-left: 1px dotted rgba(0, 0, 0, 0.1);
 }
 
 /* --------------------------------------------------------------
 /* =SMARTPHONE
 -------------------------------------------------------------- */
 @media screen and (max-width: 600px) {
-  h1 {
-    font-size: 2em;
-    line-height: 1.3;
+  body {
+    padding: 10vw 0;
   }
   p {
-    font-size: 1.1em;
-    line-height: 1.6;
+    line-height: 160%;
+    font-size: .9em;
   }
-  .social-links {
-    margin: 40px 0;
+  h1.main-title {
+    font-size: 1em;
   }
-  .social-links a {
-    font-size: 14px;
-    margin: 0 10px 0 0;
+  .text-small {
+    line-height: 160%;
+    font-size: 0.6em;
   }
-  .wrapper {
-    width: 88%;
-    margin: 0 6%;
+  header, section {
+    padding-bottom: 10vw;
+  }
+  .hero-image {
+    margin-bottom: 6vw;
   }
 }

@@ -27,21 +27,41 @@
 </head>
 
 <!-- BODY -->
-<body>
+<body id="body" class="">
+
 <div class="page">
-  <div class="wrapper">
-    <div class="header">
-      <h1>Carnet de notes</h1>
+
+  <div class="branding">
+    <img src="assets/slrncl-notestoself-icon.png" height="32px" alt="SLRNCL notes to self icon" class="branding__avatar">
+    <div class="branding__statement">
+      Think about it
     </div>
+  </div>
+
+  <div class="meta-box">
+    <div class="meta-box__button" id="light-mode-button">Light</div>
+    <div class="meta-box__button active" id="dark-mode-button">Dark</div>
+  </div>
+
+  <section>
     <div class="container">
-      <div class="feed">
-
-      </div>
+      <h1 class="main-title text-color-primary">
+        Carnet de notes
+      </h1>
     </div>
-    <div class="footer">
-      <p class="copy">
+  </section>
 
-        I like a good quote.
+  <section>
+    <div class="container">
+      <div class="feed"></div>
+    </div>
+  </section>
+
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="text-small">
+        I like a good quote —
 
         As shallow as some can be, I've often enjoyed the invitation to thought that they extend.
 
@@ -54,11 +74,13 @@
         I can't write. I tried. So I'll just add a short note to each post.
 
         It all goes somewhere, hopefully.
-
       </p>
     </div>
-  </div>
-</div>
+  </footer>
+
+</div><!-- / container -->
+
+</body>
 
 <script src="assets/jquery.js"></script>
 <script src="assets/main.js" ></script>
