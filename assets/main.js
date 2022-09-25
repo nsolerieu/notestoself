@@ -8,12 +8,14 @@ $(document).ready(function() {
 
     $.each( data.notes, function( i, note ) {
       $('.feed').append(
-        '<div class="one-quote-box quote-' +  data.notes[i].id + '">' +
-            '<p class="quote-text text-color-primary"> &ldquo;' + data.notes[i].quote + '&rdquo;</p>' +
-            '<p class="quote-author text-small">&mdash;' + data.notes[i].author + '</p>' +
-            '<div class="quote-date text-small">' + data.notes[i].date + '</div>' +
-            '<div class="quote-notes">' + data.notes[i].notes + '</div>' +
-        '</div>'
+        '<div class="row one-quote-box quote-' +  data.notes[i].id + '">' +
+          '<div class="col-50">' +
+            '<div class="quote-date">' + data.notes[i].id + ' / ' + data.notes[i].date + '</div>' +
+          '</div><div class="col-50">' +
+            '<p class="quote-text text-color-primary text-large"> &ldquo;' + data.notes[i].quote + '&rdquo;</p>' +
+            '<p class="quote-author text-regular">&mdash;' + data.notes[i].author + '</p>' +
+            '<div class="quote-notes text-regular">' + data.notes[i].notes + '</div>' +
+        '</div></div>'
       );
 
     });
@@ -21,9 +23,9 @@ $(document).ready(function() {
 
 });
 
-$('.meta-box__button').on('click', function() {
+$('.mode-switcher__button').on('click', function() {
 
-  $(this).toggleClass( "active" );
+  $(".mode-switcher__button").toggleClass( "active" );
   $("body").toggleClass( "light-mode" );
 
 });

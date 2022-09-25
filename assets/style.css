@@ -10,38 +10,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 body {
-  line-height: 1.6;
+  line-height: 120%;
   padding: 0;
   margin: 0;
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
   background: #000000;
   color: #9A9A9A;
-}
-.page {
-  padding: 10vw 0;
-  position: relative;
-}
-.page::before {
-  content: "";
-  height: 100px;
-  width: 100%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background: rgb(0,0,0);
-  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
-}
-.page::after {
-  content: "";
-  z-index: 1;
-  height: 100px;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  background: rgb(0,0,0);
-  background: linear-gradient(00deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
 }
 ::selection {
   color: #000000;
@@ -49,85 +23,64 @@ body {
 }
 .container {
   width: 100%;
-  max-width: 620px;
-  margin-right: auto;
-  margin-left: auto;
   padding: 0 20px;
 }
-
+.row {
+  display: flex;
+}
+.col-50 {
+  width: 50%;
+  max-width: 50%;
+}
 
 /* --------------------------------------------------------------
 /* =ELEMENTS & TYPO / Kind of Branding basic definition area
 -------------------------------------------------------------- */
 p {
   font-weight: 400;
-  font-size: 1em;
-  line-height: 160%;
+  font-size: 18px;
+  line-height: 120%;
   margin: 20px 0;
-}
-.text-small {
-  font-size: 0.7em;
-  opacity: 0.7;
-}
-.one-quote-box {
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 8vh;
-  margin-bottom: 10vh;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.07),
-              0 2px 4px rgba(0,0,0,0.07),
-              0 4px 8px rgba(0,0,0,0.07),
-              0 8px 16px rgba(0,0,0,0.07),
-              0 16px 32px rgba(0,0,0,0.07),
-              0 32px 64px rgba(0,0,0,0.07);
-}
-.quote-text {
-  font-size: 1.2em;
-}
-.quote-notes {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  letter-spacing: -0.02em;
 }
 .text-color-primary {
   color: #ffffff;
 }
-.view-notes {
-  text-transform: uppercase;
-  cursor: pointer;
-  display: inline-block;
+.text-small {
+  font-size: 1rem;
+  opacity: 0.7;
 }
-.view-notes.active, .view-notes:hover {
-  opacity: .9;
+.text-regular {
+  font-size: 2rem;
+}
+.text-large {
+  font-size: 3rem;
+}
+.one-quote-box {
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 .quote-date {
-  display: inline-block;
+  margin: 20px 0;
 }
 .quote-author {
   margin: 4vh 0 8vh 0;
 }
 a {
-  color: #388BFD;
+  color: #ffffff;
   font-weight: 500;
   text-decoration: none;
   cursor: pointer;
   outline: none;
-  border-bottom: 1px solid #388BFD;
 }
 a:hover {
-  color: #539BFF;
-  border-bottom: 1px solid #539BFF;
+  opacity: 0.5;
 }
 h1.main-title {
-  font-size: 1.1em;
-  font-weight: 400;
+  font-size: 8vw;
   color: #ffffff;
-  text-align: center;
-  margin-top: 14vh;
-  margin-bottom: 24vh;
-  transition: margin-bottom linear .3s;
-  transition-delay: 1.4s;
-}
-.loading-done h1.main-title {
-  margin-bottom: 20vh;
+  margin-top: 16vh;
+  letter-spacing: -0.04em;
 }
 h2 {
   font-size: 1.1em;
@@ -136,67 +89,51 @@ h2 {
   color: rgba(0,0,0,0.3);
   color: #ffffff;
 }
-header, section {
+footer {
   padding-bottom: 5vw;
 }
-footer {
-  padding-bottom: 6vw;
-}
-.fade-in-on-load {
-  opacity: 0;
-  transition: opacity linear .6s;
-  transition-delay: 1s;
-}
-.loading-done .fade-in-on-load {
-  opacity: 1;
-}
-.branding__avatar.dark {
-  display: block;
-}
-.branding__avatar.light {
-  display: none;
+section.padded {
+  padding: 10vw 0;
 }
 
 
 /* --------------------------------------------------------------
 /* =Header stuff
 -------------------------------------------------------------- */
-.meta-box {
-  position: fixed;
-  z-index: 2;
-  top: 16px;
-  right: 16px;
-  padding: 8px;
-  border-radius: 8px;
-  background: rgba(190, 190, 190, 0.25);
+header {
   display: flex;
+  padding: 20px;
+  width: 100%;
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
 }
-.meta-box__button {
+.mode-switcher__button {
   font-size: 10px;
   cursor: pointer;
-  text-transform: uppercase;
-  opacity: 0.3;
-  padding: 0 4px;
-  font-weight: bold;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: block;
+  overflow: hidden;
+  text-indent: 999px;
 }
-.meta-box__button:hover {
-  opacity: 0.8;
+.mode-switcher__button.active {
+  display: none;
 }
-.meta-box__button.active {
-  opacity: 1;
+#light-mode-button {
+  background: #f0f0f0;
 }
-.branding {
-  position: fixed;
-  z-index: 2;
-  top: 16px;
-  left: 16px;
-  display: flex;
+#dark-mode-button {
+  background: #121212;
 }
-.branding__statement {
-  font-size: 12px;
-  margin-left: 8px;
-  line-height: 32px;
+.header-navigation {
+  margin-left: 16px;
+  line-height: 24px;
 }
+.nav-separator {
+  margin: 0 4px;
+}
+
 
 /* --------------------------------------------------------------
 /* =LIGHT MODE
@@ -205,74 +142,44 @@ body.light-mode {
   background: #f0f0f0;
   color: #5b626a;
 }
-.light-mode .text-color-primary {
+.light-mode .text-color-primary, .light-mode a {
   color: #262a2f;
-}
-.light-mode a {
-  color: #0969da;
-  border-bottom: 2px solid #0969da;
-}
-.light-mode a:hover {
-  color: #247BE2;
-  border-bottom: 2px solid #247BE2;
-}
-.light-mode .one-quote-box {
-  background: rgba(255, 255, 255, 0.92);
 }
 .light-mode .quote-notes {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
-.light-mode .page::before {
-  content: "";
-  height: 100px;
-  width: 100%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
+.light-mode .one-quote-box {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.light-mode header {
   background: rgb(0,0,0);
   background: linear-gradient(180deg, rgba(240,240,240,1) 0%, rgba(240,240,240,0) 100%);
-}
-.light-mode .page::after {
-  content: "";
-  z-index: 1;
-  height: 100px;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  background: rgb(0,0,0);
-  background: linear-gradient(00deg, rgba(240,240,240,1) 0%, rgba(240,240,240,0) 100%);
-}
-.light-mode .branding__avatar.dark {
-  display: none;
-}
-.light-mode .branding__avatar.light {
-  display: block;
 }
 
 /* --------------------------------------------------------------
 /* =SMARTPHONE
 -------------------------------------------------------------- */
 @media screen and (max-width: 600px) {
-  body {
-    padding: 10vw 0;
-  }
-  p {
-    line-height: 160%;
-    font-size: .9em;
-  }
-  h1.main-title {
-    font-size: 1em;
-  }
   .text-small {
-    line-height: 160%;
-    font-size: 0.6em;
+    font-size: .8rem;
+  }
+  .text-regular {
+    font-size: 1rem;
+  }
+  .text-large {
+    font-size: 2rem;
   }
   header, section {
     padding-bottom: 10vw;
   }
-  .hero-image {
-    margin-bottom: 6vw;
+  h1 {
+    font-size: 10vw;
+  }
+  .row {
+    display: block;
+  }
+  .col-50 {
+    width: 100%;
+    max-width: 100%;
   }
 }
