@@ -76,10 +76,16 @@ a {
 a:hover {
   opacity: 0.5;
 }
+.hero__text-box {
+  max-width: 540px;
+  margin: 20% 0 60px 0
+}
 h1.main-title {
-  font-size: 8vw;
+  margin: 0 0 40px 0;
+  font-size: 4rem;
+  line-height: 100%;
   color: #ffffff;
-  margin-top: 16vh;
+  font-weight: normal;
   letter-spacing: -0.04em;
 }
 h2 {
@@ -110,8 +116,8 @@ header {
 .mode-switcher__button {
   font-size: 10px;
   cursor: pointer;
-  width: 24px;
-  height: 24px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   display: block;
   overflow: hidden;
@@ -128,7 +134,7 @@ header {
 }
 .header-navigation {
   margin-left: 16px;
-  line-height: 24px;
+  line-height: 16px;
 }
 .nav-separator {
   margin: 0 4px;
@@ -159,7 +165,7 @@ body.light-mode {
 /* --------------------------------------------------------------
 /* =SMARTPHONE
 -------------------------------------------------------------- */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 821px) {
   .text-small {
     font-size: .8rem;
   }
@@ -181,5 +187,12 @@ body.light-mode {
   .col-50 {
     width: 100%;
     max-width: 100%;
+  }
+  .hero__text-box {
+    padding: 10% 0 20px 0;
+    max-width: none;
+  }
+  h1.main-title {
+    font-size: 9vw;
   }
 }

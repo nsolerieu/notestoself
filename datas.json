@@ -1,18 +1,32 @@
 {
   "notes":[
     {
+      "id": "55",
+      "date": "2022-10-01",
+      "quote": "After all these years, I have come to realise that I must go through a period of agony and torture before I have a breakthrough.",
+      "author": "Hans Zimmer",
+      "notes": "<p>Nothing good comes easy. The creative process is a torture that usually feels too personal. I like how zimmer puts in perspective the pain of the process that rarely get acknowldge in our hustle culture that want flow state and breakthoughts on demand.</p>"
+    },
+    {
+      "id": "54",
+      "date": "2022-10-01",
+      "quote": "The dose makes the poison",
+      "author": "Paracelsus",
+      "notes": "<p>We've know about the idea of hormesis for a long time but seem to forget quite often that a bit os something bad for us can have positive effects. Too much comfort makes us weak; not enough can kill. Finding the limit is a perilous exercise of moderation. I try to apply this hormetic approach to nutrition, exercise and intelect as frequently as possible.</p>"
+    },
+    {
       "id": "53",
       "date": "2022-09-30",
       "quote": "The stronger a theory is, the easier it is in principle to find that it is false, and the more likely we are to believe it if we fail to do so. In contrast, a theory that is completely incapable of being disproved is often described as ‘metaphysical’ or unscientific.",
       "author": "Alastair I. M. Rae",
-      "notes": "<p>This has been a key for me to understand how to properly formulate theories and then extrapolate to come up with a useful framework. It's easy to get lost in grand statements but the reality is often messy and has granularity that isn't easy to grasp. I'm dumb so this is a healthy reminder to not fall for overly simplistic explanations.</p>"
+      "notes": "<p>I'm not the sharpest ool in the shed – so this is a healthy reminder to not fall for overly simplistic explanations often supported by Einstein words: if you can't explain something simply you don't know it well enough. Reality is messy and has granularity that isn't easy to grasp.</p>"
     },
     {
       "id": "52",
       "date": "2022-09-26",
       "quote": "Communication is limited by perspective.",
       "author": "Andrei Tarkovsky",
-      "notes": "<p>Human communication is very imperfect</p>"
+      "notes": "<p>This capture in a mantra like simplicity what makes human communication so complicated.</p>"
     },
     {
       "id": "51",
@@ -117,7 +131,7 @@
       "date": "2020-05-01",
       "quote": "The learning of many things doesn't teach understanding of anything.",
       "author": "Heraclitus",
-      "notes": "<p>Too many overeducted people have stated the relative futility of their education.</p>"
+      "notes": "<p>Too many overeducted people have stated the relative futility of their education. An examined life seem the only path to the a form understanding. Note after note. This is the closest we’ll ever get to knowledge and hopefully die in peace.</p>"
     },
     {
       "id": "36",
