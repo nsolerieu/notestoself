@@ -56,10 +56,6 @@ img.fluid-img {
   width: 100%;
   height: auto;
 }
-
-/* --------------------------------------------------------------
-/* =ELEMENTS & TYPO / Kind of Branding basic definition area
--------------------------------------------------------------- */
 p {
   font-weight: 400;
   font-size: 24px;
@@ -95,10 +91,6 @@ a {
 a:hover {
   opacity: 0.5;
 }
-.hero__text-box {
-  max-width: 540px;
-  padding: 10vh 0 60px 0
-}
 h1.main-title {
   margin: 0;
   font-size: 48px;
@@ -113,8 +105,11 @@ h2 {
 .padded-section {
   padding: 5vh 0;
 }
-footer {
-  padding-bottom: 6vw;
+.large-padding-botton {
+  padding-bottom: 5vh;
+}
+.large-padding-top {
+  padding-top: 5vh;
 }
 
 
