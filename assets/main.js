@@ -8,7 +8,7 @@ $(document).ready(function() {
 
     $.each( data.notes, function( i, note ) {
       $('.feed').append(
-        '<div class="row one-quote-box quote-' +  data.notes[i].id + '">' +
+        '<div class="row one-quote-box full-row-border-top quote-' +  data.notes[i].id + '">' +
           '<div class="col-50">' +
             '<div class="quote-date text-small text-color-secondary">' + data.notes[i].id + ' — ' + data.notes[i].date + '</div>' +
           '</div><div class="col-50">' +
