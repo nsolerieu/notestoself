@@ -10,27 +10,39 @@
   -moz-osx-font-smoothing: grayscale;
 }
 body {
-  line-height: 120%;
+  line-height: 1.6;
   padding: 0;
   margin: 0;
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  background: #000000;
-  color: #9A9A9A;
+  background: #ffffff ;
+  color: #292934;
 }
 ::selection {
   color: #000000;
-  background: rgba(255,255,255,0.9);
+  background: rgba(0,0,0,0.15);
 }
 .container {
   width: 100%;
-  padding: 0 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 .row {
   display: flex;
 }
 .col-50 {
   width: 50%;
+  padding: 0 15px;
   max-width: 50%;
+}
+.col-100 {
+  width: 100%;
+  padding: 0 15px;
+}
+img.fluid-img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* --------------------------------------------------------------
@@ -38,38 +50,33 @@ body {
 -------------------------------------------------------------- */
 p {
   font-weight: 400;
-  font-size: 18px;
-  line-height: 120%;
+  font-size: 24px;
+  line-height: 140%;
   margin: 20px 0;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 .text-color-primary {
-  color: #ffffff;
+  color: #292934;
 }
-.text-small {
-  font-size: 1rem;
+.text-color-secondary {
   opacity: 0.7;
 }
+.text-small {
+  font-size: 12px;
+}
 .text-regular {
-  font-size: 2rem;
+  font-size: 20px;
 }
 .text-large {
-  font-size: 3rem;
+  font-size: 28px;
 }
-.one-quote-box {
-  padding: 20px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-}
-.quote-date {
-  margin: 20px 0;
-}
-.quote-author {
-  margin: 4vh 0 8vh 0;
+.hero {
+  overflow: hidden;
+  border-radius: 16px;
 }
 a {
-  color: #ffffff;
-  font-weight: 500;
-  text-decoration: none;
+  color: #292934;
+  text-decoration: underline;
   cursor: pointer;
   outline: none;
 }
@@ -78,88 +85,68 @@ a:hover {
 }
 .hero__text-box {
   max-width: 540px;
-  margin: 20% 0 60px 0
+  padding: 10vh 0 60px 0
 }
 h1.main-title {
-  margin: 0 0 40px 0;
-  font-size: 4rem;
+  margin: 0;
+  font-size: 48px;
   line-height: 100%;
-  color: #ffffff;
-  font-weight: normal;
   letter-spacing: -0.04em;
 }
 h2 {
-  font-size: 1.1em;
+  font-size: 28px;
   margin: 0;
-  font-weight: 700;
-  color: rgba(0,0,0,0.3);
-  color: #ffffff;
+  letter-spacing: -0.04em;
+}
+.padded-section {
+  padding: 5vh 0;
 }
 footer {
-  padding-bottom: 5vw;
-}
-section.padded {
-  padding: 10vw 0;
+  padding-bottom: 6vw;
 }
 
+
+/* --------------------------------------------------------------
+/* =Page specific
+-------------------------------------------------------------- */
+.one-quote-box {
+  padding: 60px 0 80px 0;
+  position: relative;
+}
+.quote-notes {
+  margin-top: 80px;
+}
+.one-quote-box::before {
+  content: "";
+  background: rgba(0, 0, 0, 0.08);
+  height: 1px;
+  width: calc(100% - 30px);
+  top: 0;
+  left: 15px;
+  position: absolute;
+}
+.quote-date {
+  margin: 20px 0 80px 0;
+}
 
 /* --------------------------------------------------------------
 /* =Header stuff
 -------------------------------------------------------------- */
 header {
   display: flex;
-  padding: 20px;
+  padding: 15px 0;
+  font-size: 14px;
   width: 100%;
-  background: rgb(0,0,0);
-  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
 }
-.mode-switcher__button {
-  font-size: 10px;
-  cursor: pointer;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  display: block;
-  overflow: hidden;
-  text-indent: 999px;
-}
-.mode-switcher__button.active {
-  display: none;
-}
-#light-mode-button {
-  background: #f0f0f0;
-}
-#dark-mode-button {
-  background: #121212;
-}
-.header-navigation {
-  margin-left: 16px;
-  line-height: 16px;
+header a {
+  text-decoration: none;
 }
 .nav-separator {
   margin: 0 4px;
+  opacity: 0.2;
 }
-
-
-/* --------------------------------------------------------------
-/* =LIGHT MODE
--------------------------------------------------------------- */
-body.light-mode {
-  background: #f0f0f0;
-  color: #5b626a;
-}
-.light-mode .text-color-primary, .light-mode a {
-  color: #262a2f;
-}
-.light-mode .quote-notes {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-.light-mode .one-quote-box {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-.light-mode header {
-  background: rgb(0,0,0);
-  background: linear-gradient(180deg, rgba(240,240,240,1) 0%, rgba(240,240,240,0) 100%);
+.logo-ish {
+  font-weight: bold;
 }
 
 /* --------------------------------------------------------------
@@ -178,9 +165,6 @@ body.light-mode {
   header, section {
     padding-bottom: 10vw;
   }
-  h1 {
-    font-size: 10vw;
-  }
   .row {
     display: block;
   }
@@ -193,6 +177,6 @@ body.light-mode {
     max-width: none;
   }
   h1.main-title {
-    font-size: 9vw;
+    font-size: 32px;
   }
 }
