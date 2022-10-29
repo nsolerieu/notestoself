@@ -105,6 +105,9 @@ h2 {
 .padded-section {
   padding: 8vh 0;
 }
+.right-padded-col {
+  padding-right: 60px;
+}
 .large-padding-botton {
   padding-bottom: 8vh;
 }
@@ -175,5 +178,8 @@ header a {
   }
   h1.main-title {
     font-size: 32px;
+  }
+  .right-padded-col {
+    padding-right: 15px;
   }
 }

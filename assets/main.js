@@ -11,7 +11,7 @@ $(document).ready(function() {
         '<div class="row one-quote-box full-row-border-top quote-' +  data.notes[i].id + '">' +
           '<div class="col-50">' +
             '<div class="quote-date text-small text-color-secondary">' + data.notes[i].id + ' — ' + data.notes[i].date + '</div>' +
-          '</div><div class="col-50">' +
+          '</div><div class="col-50 right-padded-col">' +
             '<p class="quote-text text-color-primary text-large"> &ldquo;' + data.notes[i].quote + '&rdquo;</p>' +
             '<p class="quote-author text-small">&mdash; ' + data.notes[i].author + '</p>' +
             '<div class="quote-notes text-regular text-color-secondary">' + data.notes[i].notes + '</div>' +
